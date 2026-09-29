@@ -37,6 +37,15 @@
       <artifactId>spark-sql_${scala.binary.version}</artifactId>
       <version>${spark.version}</version>
     </dependency>
+
+    <!-- Embedded in-memory database used by the jdbc-integration module so the
+         JDBC read/write/pushdown examples run with no external server. Point the
+         module at a real database with -Djdbc.url=... -Djdbc.user=... instead. -->
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>2.2.224</version>
+    </dependency>
   </dependencies>
 
   <build>
